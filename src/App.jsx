@@ -30,7 +30,15 @@ function App() {
     }
   ]);
 
-  const painels = document.querySelectorAll('.painel');
+
+  return (
+    
+      <div className="container">
+       {
+        imagens.map((item, index) => (
+          <div key={index} className="painel" style={{backgroundImage: `url(${item.imagen})`}} onClick={()=>{
+
+            const painels = document.querySelectorAll('.painel');
 
 painels.forEach(painel => {
   painel.addEventListener('click', () => {
@@ -45,12 +53,8 @@ function removeActiveClasses() {
   });
 }
 
-  return (
-    
-      <div className="container">
-       {
-        imagens.map((item, index) => (
-          <div key={index} className="painel" style={{backgroundImage: `url(${item.imagen})`}}>
+
+          }}>
             
             <h3>{item.nome}</h3>
           </div>
