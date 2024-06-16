@@ -5,6 +5,7 @@ import nami from './assets/nami.png';
 import sanji from './assets/sanji.png';
 import chopper from './assets/chopper.png';
 import './App.css'
+import Card from './components/cards/card'
 
 function App() {
   const [cards, setCards] = useState([
@@ -49,10 +50,7 @@ function App() {
       <div className="container">
        {
         cards.map((item, index) => (
-          <div key={index} className="painel" style={{backgroundImage: `url(${item.imagen})`}}>
-            
-            <h3>{item.nome}</h3>
-          </div>
+          <Card item={item} key={index}/>
         ))
        }        
       </div>
